@@ -113,7 +113,7 @@ CS377-A_hospital_medicaldb/
 
 ## ERD Diagram:
 
-<img src="images/Hospital_meddb_ERD_Diagram.png" width="300"/>
+<p align="center"> <img src="images/Hospital_meddb_ERD_Diagram.png" width="300"/> </p>
 
 ---
 
