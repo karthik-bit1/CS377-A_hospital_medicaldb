@@ -1,3 +1,10 @@
+
+---
+layout: pages
+title: Hospital Medical Database
+permalink: /README/
+---
+
 # Hospital Medical Database
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
