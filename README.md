@@ -1,16 +1,29 @@
 # Hospital Medical Database
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
+![Docker](https://img.shields.io/badge/Docker-2496ED)
+![Course](https://img.shields.io/badge/CS377-Ursinus_College-orange)
+
+---
+
 **Course:** CS377.<br>
 **Author:** Karthik Reddy Akkala.<br>
 **Date:** May 2, 2026. 
- 
+
+---
+
 ## Introduction: 
 This project is for implementing a PostgreSQL based hospital management database for managing patients, medical test, and all other records.
 
 This has been containerized with docker for easy setup and working efficiently across different environoments.
 
+---
+
 ## Tools:
 - PostgreSQL
 - Docker
+
+---
 
 ## Project Structure: 
 
@@ -31,6 +44,8 @@ CS377-A_hospital_medicaldb/
 └── scripts
     └── backup_db.sh
 ```
+
+---
 
 ## Setting Up Database:
 
@@ -58,6 +73,8 @@ docker compose down -v
 docker compose up
 ```
 
+---
+
 ## Backup Database:
 
 Running Backups:
@@ -75,6 +92,8 @@ CS377-A_hospital_medicaldb/
         └── backup.sql
 ```
 
+---
+
 ## Tables In The Database:
 - **patient**: stores patient information
 - **doctor**: stores doctor details 
@@ -84,9 +103,13 @@ CS377-A_hospital_medicaldb/
 - **prescriptions**: records prescriptions issued 
 - **prescription_medicine**: links prescriptions with medicines 
 
+---
+
 ## ERD Diagram:
 
 <img src="images/Hospital_meddb_ERD_Diagram.png" width="300"/>
+
+---
 
 ## Sample Queries:
 
