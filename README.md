@@ -101,13 +101,48 @@ CS377-A_hospital_medicaldb/
 ---
 
 ## Tables In The Database:
+
 - **patient**: stores patient information
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/patient.png" width="300"/>
+</p>
+
 - **doctor**: stores doctor details 
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/doctor.png" width="300"/>
+</p>
+
 - **appointments**: tracks patients appointments with their doctor
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/appointments.png" width="300"/>
+</p>
+
 - **med_test**: stores medical test results 
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/med_test.png" width="300"/>
+</p>
+
 - **medicine_price**: stores medicine pricing
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/medicine_price.png" width="300"/>
+</p>
+
 - **prescriptions**: records prescriptions issued 
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/prescriptions.png" width="300"/>
+</p>
+
 - **prescription_medicine**: links prescriptions with medicines 
+
+<p align="center">
+  <img src="/CS377-A_hospital_medicaldb/images/prescriptions_medicine.png" width="300"/>
+</p>
 
 ---
 
