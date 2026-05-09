@@ -1,7 +1,7 @@
 ---
 layout: pages
 title: Hospital Medical Database
-permalink: /README/
+permalink: /
 ---
 
 # Hospital Medical Database
