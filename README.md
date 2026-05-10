@@ -185,29 +185,29 @@ And a lot more queries added in <https://github.com/karthik-bit1/CS377-A_hospita
 
 ## Main Function Calls Added:
 
-1. Scan reports related to each requested scan and it's result.
+- Scan reports related to each requested scan and it's result.
 
 ```sql
 SELECT * FROM scan_reports('Blood Test', 'negative') ORDER BY mt_id;
 ```
 
-2. Total number of appointments requested for doctor name.
+- Total number of appointments requested for doctor name.
 
 ```sql
 SELECT * FROM get_total_appointments_of_doctor('Linda Harris');
 ```
 
-3. Prescriptions details of each prescription id requested
+- Prescriptions details of each prescription id requested
 
 ```sql
 SELECT * FROM get_prescription_details(100);
 ```
 
-4. And a lot more other functions included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/function.sql> .
+- And a lot more other functions included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/function.sql> .
 
 ## Main Procedure Calls Added:
 
-1. 
+- Inserting patient data into patient table
 
 ```sql
 CALL insert_patient('Alice Smith', 30, 165.5, 60.0);
@@ -215,7 +215,7 @@ CALL insert_patient('Alice Smith', 30, 165.5, 60.0);
 SELECT * FROM patient WHERE p_name = 'Alice Smith';
 ```
 
-2. 
+- Updating medical price in medicine_price table
 
 ```sql
 CALL update_medicine_price(1, 19.99);
@@ -223,7 +223,7 @@ CALL update_medicine_price(1, 19.99);
 SELECT * FROM medicine_price WHERE mp_id = 1;
 ```
 
-3. 
+- Deleting existing appointments in appointments table
 
 ```sql
 CALL delete_appointment(1);
@@ -231,7 +231,7 @@ CALL delete_appointment(1);
 SELECT * FROM appointments;
 ```
 
-4. And a lot more other Procedures included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/procedures.sql> .
+- And a lot more other Procedures included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/procedures.sql> .
 
 
 ## Conclusion:
