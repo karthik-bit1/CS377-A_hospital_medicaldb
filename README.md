@@ -180,3 +180,63 @@ SELECT * FROM scan_reports('Blood Test', 'negative') ORDER BY mt_id;
 -- Assuming pr_id = 1 exists in prescriptions table
 SELECT * FROM get_prescription_details(1);
 ```
+
+And a lot more queries added in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/queries.sql>
+
+## Main Function Calls Added:
+
+1. Scan reports related to each requested scan and it's result.
+
+```sql
+SELECT * FROM scan_reports('Blood Test', 'negative') ORDER BY mt_id;
+```
+
+2. Total number of appointments requested for doctor name.
+
+```sql
+SELECT * FROM get_total_appointments_of_doctor('Linda Harris');
+```
+
+3. Prescriptions details of each prescription id requested
+
+```sql
+SELECT * FROM get_prescription_details(100);
+```
+
+4. And a lot more other functions included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/function.sql> .
+
+## Main Procedure Calls Added:
+
+1. 
+
+```sql
+CALL insert_patient('Alice Smith', 30, 165.5, 60.0);
+
+SELECT * FROM patient WHERE p_name = 'Alice Smith';
+```
+
+2. 
+
+```sql
+CALL update_medicine_price(1, 19.99);
+
+SELECT * FROM medicine_price WHERE mp_id = 1;
+```
+
+3. 
+
+```sql
+CALL delete_appointment(1);
+
+SELECT * FROM appointments;
+```
+
+4. And a lot more other Procedures included in <https://github.com/karthik-bit1/CS377-A_hospital_medicaldb/blob/main/queries/procedures.sql> .
+
+
+## Conclusion:
+
+This project is used to mange data observation from different data tables included in the database. It is used widely in registar office to manqage bills, patients information and appointments, doctor computer to check there patients data and easy access in editing there prescriptions and appointments, and patients device to schedule appointments, gather information of medicines and check there reports.
+
+Moving further, I will be adding a app.py to access data and have a directs report on search instead of prompting each SQL command line.
+
