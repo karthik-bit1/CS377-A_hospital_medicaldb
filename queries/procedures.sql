@@ -1,3 +1,6 @@
+--- Stored Procedures for Hospital Medical Database
+
+--- Procedure to insert a new patient record
 CREATE OR REPLACE PROCEDURE insert_patient(
     in_p_name VARCHAR,
     in_p_age INT,
@@ -12,6 +15,7 @@ BEGIN
 END;
 $$;
 
+--- Procedure to insert a new prescription record
 CREATE OR REPLACE PROCEDURE insert_prescription(
     in_p_id INT,
     in_d_id INT,
@@ -26,6 +30,7 @@ BEGIN
 END;
 $$;
 
+--- Procedure to insert a new medical test record
 CREATE OR REPLACE PROCEDURE insert_med_test(
     in_p_id INT,
     in_d_id INT,
@@ -41,22 +46,22 @@ BEGIN
 END;
 $$;
 
+--- Procedure to update the price of a medicine
 CREATE OR REPLACE PROCEDURE update_medicine_price(
-    in_m_id INT,
+    in_mp_id INT,
     in_new_price FLOAT
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
     UPDATE medicine_price
-    SET m_price = in_new_price
-    WHERE m_id = in_m_id;
+    SET price = in_new_price
+    WHERE mp_id = in_mp_id;
 END;
 $$;
 
-CREATE OR REPLACE PROCEDURE delete_appointment(
-    in_ap_id INT
-)
+--- Procedure to delete an appointment based on appointment ID
+CREATE OR REPLACE PROCEDURE delete_appointment(in_ap_id INT)
 LANGUAGE plpgsql
 AS $$
 BEGIN
