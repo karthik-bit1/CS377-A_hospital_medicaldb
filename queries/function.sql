@@ -1,3 +1,6 @@
+--- Functions for Hospital Management System
+
+--- Function to scan reports based on medical test name and result
 CREATE OR REPLACE FUNCTION Scan_Reports(p_mt_name VARCHAR, p_mt_result VARCHAR)
 RETURNS TABLE (
     mt_id INT,
@@ -17,25 +20,7 @@ BEGIN
 END;
 $$;
 
-CREATE OR REPLACE FUNCTION Get_Patient_Tests(pp_id INT)
-RETURNS TABLE (
-    p_id INT,
-    p_name VARCHAR,
-    mt_name VARCHAR,
-    mt_result VARCHAR
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-    RETURN QUERY
-    SELECT p.p_id, p.p_name, m.mt_name, m.mt_result
-    FROM med_test m
-    JOIN patient p ON p.p_id = m.p_id
-    WHERE p.p_id = pp_id;
-END;
-$$;
-
-
+--- Function to get all appointments for a specific doctor
 CREATE OR REPLACE FUNCTION Get_Doctor_Appointments(in_d_id INT)
 RETURNS TABLE (
     ap_date DATE,
@@ -54,6 +39,7 @@ BEGIN
 END;
 $$;
 
+--- Function to get patient information based on patient ID
 CREATE OR REPLACE FUNCTION Get_Patient_Info(in_p_id INT)
 RETURNS TABLE (
     p_name VARCHAR,
@@ -71,6 +57,7 @@ BEGIN
 END;
 $$;
 
+--- Function to get medical history of a patient based on patient ID
 CREATE OR REPLACE FUNCTION Get_Patient_Medical_History(in_p_id INT)
 RETURNS TABLE (
     p_name VARCHAR,
@@ -92,6 +79,7 @@ BEGIN
 END;
 $$;
 
+--- Function to get prescription details based on prescription ID
 CREATE OR REPLACE FUNCTION Get_Prescription_Details(in_pr_id INT)
 RETURNS TABLE (
     pr_date DATE,
@@ -112,3 +100,22 @@ BEGIN
     WHERE pr.pr_id = in_pr_id;
 END;
 $$;
+
+--- Function to get total appointments of a doctor based on doctor's name
+CREATE OR REPLACE FUNCTION get_total_appointments_of_doctor(in_d_name VARCHAR)
+RETURNS TABLE (
+    d_name VARCHAR,
+    total_appointments BIGINT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT d.d_name, COUNT(a.ap_id) AS total_appointments
+    FROM doctor d
+    LEFT JOIN appointments a ON d.d_id = a.d_id
+    WHERE d.d_name = in_d_name
+    GROUP BY d.d_name;
+END;
+$$;
+
